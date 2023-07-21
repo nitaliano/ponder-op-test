@@ -26,11 +26,11 @@ This will return all NFTs owners by address
 
 ```
 {
-    tokens {
-        owner {
-            id
-        }
+  tokens {
+    owner {
+      id
     }
+  }
 }
 ```
 
