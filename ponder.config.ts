@@ -2,8 +2,12 @@ import type { Config } from "@ponder/core";
 
 export const config: Config = {
   networks: [
-    { name: "optimism", chainId: 10, rpcUrl: process.env.PONDER_RPC_URL_10 },
+    { name: "optimism", chainId: 10, rpcUrl: process.env.JSON_RPC_URL },
   ],
+  database: {
+    kind: 'postgres',
+    connectionString: 'postgres://db_username:db_password@localhost:5432/db_name',
+  },
   contracts: [
     {
       name: "Proxy",

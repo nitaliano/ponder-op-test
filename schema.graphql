@@ -1,4 +1,20 @@
-type ExampleEntity @entity {
+type Account @entity {
   id: String!
-  name: String!
+  tokens: [Token!]! @derivedFrom(field: "owner")
+  transferFromEvents: [TransferEvent!]! @derivedFrom(field: "from")
+  transferToEvents: [TransferEvent!]! @derivedFrom(field: "to")
+}
+
+type Token @entity {
+  id: BigInt!
+  owner: Account!
+  transferEvents: [TransferEvent!]! @derivedFrom(field: "tokenId")
+}
+
+type TransferEvent @entity {
+  id: String!
+  from: Account!
+  to: Account!
+  token: Token!
+  timestamp: Int!
 }
