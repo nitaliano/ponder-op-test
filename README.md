@@ -33,3 +33,17 @@ This will return all NFTs owners by address
     }
 }
 ```
+
+### NFTs owned by Account
+
+Will return a list of token id's that are owned by the account
+
+```
+{
+  account(id: "0x001A2033a7A1e88d8cD15f60B2fcb45d255f5C93") {
+    tokens {
+      id
+    }
+  }
+}
+```
